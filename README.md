@@ -50,6 +50,63 @@ Setelah Anda memastikan lingkungan virtual diaktifkan (jika digunakan), gunakan 
 pip install -r requirements.txt
 ```
 
-## Menjalankan Skrip
+# Panduan Menjalankan Skrip
 
-Sekarang, Anda siap untuk menjalankan skrip ini. Pastikan Anda telah mengikuti langkah-langkah persiapan dengan baik sebelum melanjutkan.
+Setelah Anda menyelesaikan langkah-langkah persiapan awal, berikut adalah langkah-langkah untuk menjalankan skrip ini:
+
+## Langkah 1: Aktifkan Environment (Opsional)
+
+Jika Anda telah membuat lingkungan virtual (virtual environment), pastikan Anda mengaktifkannya sebelum menjalankan skrip. Berikut adalah cara mengaktifkan lingkungan virtual:
+
+- Windows:
+
+```bash
+myenv\Scripts\activate
+```
+
+- macOS dan Linux:
+
+```bash
+source myenv/bin/activate
+```
+
+## Langkah 2: Menjalankan Skrip
+Sekarang Anda siap untuk menjalankan skrip run.py. Gunakan perintah berikut untuk menjalankannya:
+
+```bash
+python run.py
+```
+
+Skrip ini akan mulai dieksekusi, dan Anda akan melihat output dan hasil eksekusi di konsol.
+
+Pastikan untuk memantau konsol dan mengikuti instruksi atau pesan kesalahan yang mungkin muncul selama proses eksekusi skrip.
+
+# Panduan Update Repository Lokal
+
+Jika Anda ingin memastikan bahwa repository lokal Anda selalu diperbarui dengan perubahan terbaru dari repository GitHub, Anda dapat mengikuti langkah-langkah ini:
+
+## Langkah 1: Pindah ke Direktori Repository
+
+Pastikan Anda berada di direktori yang sesuai dengan repository lokal Anda. Anda dapat menggunakan perintah `cd` untuk berpindah ke direktori yang benar:
+
+```bash
+cd path/ke/github/skripsi-ade
+```
+
+## Langkah 2: Sinkronisasi dengan Repository GitHub
+Gunakan perintah berikut untuk mengambil perubahan terbaru dari repository GitHub dan memperbarui repository lokal Anda:
+
+```bash
+git pull
+```
+
+Jika Anda bekerja di cabang (branch) lain selain master, gantilah master dengan nama cabang yang Anda gunakan.
+
+## Langkah 3: Mengatasi Konflik (Opsional)
+
+Jika Anda menghadapi konflik selama proses git pull, Anda perlu mengatasi konflik tersebut. Gunakan alat penggabungan yang sesuai untuk menggabungkan perubahan secara manual.
+
+## Langkah 4: Selesaikan Pembaruan
+
+Setelah pembaruan selesai, repository lokal Anda akan diperbarui dengan perubahan terbaru dari GitHub.
+
