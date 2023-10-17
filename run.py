@@ -9,25 +9,40 @@ import pickle
 
 # Fungsi untuk memuat gambar dari folder
 def load_images(folder_path, label, image_size=(128, 128)):
+    # Inisialisasi daftar untuk gambar dan label
     images = []
     labels = []
+    
+    # Iterasi melalui file dalam folder
     for image_name in os.listdir(folder_path):
+        # Buat path lengkap ke gambar
         image_path = os.path.join(folder_path, image_name)
+        
+        # Baca gambar dan konversi ke grayscale
         image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
-        # Resize gambar ke ukuran yang sama
+        
+        # Resize gambar ke ukuran yang ditentukan
         image = cv2.resize(image, image_size)
+        
+        # Terapkan ambang adaptif pada gambar
         segmented_image = cv2.adaptiveThreshold(image, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 11, 2)
+        
+        # Tambahkan gambar dan label ke daftar
         images.append(segmented_image)
         labels.append(label)
+    
+    # Kembalikan daftar gambar dan label
     return images, labels
 
 # Memuat gambar dari tiga folder pelatihan
-folder_sehat = "folder_sehat"
+folder_muda = "folder_muda"
 folder_kering = "folder_kering"
 folder_busuk = "folder_busuk"
+folder_matang = "folder_matang"
 
-sehat_images, sehat_labels = load_images(folder_sehat, 0)
-kering_images, kering_labels = load_images(folder_kering, 1)
+# Memuat gambar dari folder-folder tersebut dengan label yang sesuai
+sehat_images, sehat_labels = load_images(folder_matang, 0)
+kering_images, kering_labels = load_images(folder_muda, 1)
 busuk_images, busuk_labels = load_images(folder_busuk, 2)
 
 # Menggabungkan semua data gambar dan label
@@ -48,6 +63,8 @@ svm_model.fit(X_train, y_train)
 # Menguji model pada data validasi
 y_pred = svm_model.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
+
+# Cetak akurasi model
 print("Accuracy:", accuracy)
 
 # Simpan model SVM jika akurasi lebih dari 70%
@@ -57,7 +74,6 @@ if accuracy > 0.7:
     model_path = os.path.join(script_directory, model_filename)
     joblib.dump(svm_model, model_path)
     print(f"Model SVM disimpan sebagai {model_path}")
-
 
 # Memuat model SVM jika sudah ada
 if os.path.isfile(model_filename):
