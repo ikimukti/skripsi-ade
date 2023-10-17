@@ -11,7 +11,11 @@ Pastikan Python telah diinstal di sistem Anda. Jika belum, Anda dapat mengunduhn
 
 Jika Anda ingin menggunakan Visual Studio Code sebagai editor kode, Anda dapat mengunduhnya dari [Visual Studio Code Official Website](https://code.visualstudio.com/).
 
-## Langkah 3: Clone Repository
+## Langkah 3: Instalasi Git
+
+Jika Anda belum memiliki Git di sistem Anda, Anda dapat mengunduhnya dari [Git Official Website](https://git-scm.com/downloads).
+
+## Langkah 4: Clone Repository
 
 Gunakan perintah berikut untuk mengklon repository ini dari GitHub:
 
@@ -19,7 +23,7 @@ Gunakan perintah berikut untuk mengklon repository ini dari GitHub:
 git clone https://github.com/ikimukti/skripsi-ade.git
 ```
 
-## Langkah 4: Membuat Environment (Opsional)
+## Langkah 5: Membuat Environment (Opsional)
 
 Disarankan untuk membuat lingkungan virtual (virtual environment) untuk mengisolasi dependensi proyek ini. Gunakan venv atau virtualenv untuk membuatnya:
 
@@ -38,7 +42,7 @@ myenv\Scripts\activate
 source myenv/bin/activate
 ```
 
-## Langkah 5: Menginstal Dependensi
+## Langkah 6: Menginstal Dependensi
 
 Setelah Anda memastikan lingkungan virtual diaktifkan (jika digunakan), gunakan pip untuk menginstal semua dependensi dari file requirements.txt:
 
